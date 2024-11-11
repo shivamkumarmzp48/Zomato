@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Zomato Mockup</title>
+    <style>
+        /* CSS Styling */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #ff5757;
+            color: #fff;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        .search-bar {
+            display: flex;
+            align-items: center;
+        }
+
+        .search-bar input {
+            padding: 5px;
+            font-size: 16px;
+            border: none;
+            outline: none;
+            border-radius: 5px;
+            margin-right: 5px;
+        }
+
+        .search-bar button {
+            padding: 5px 10px;
+            border: none;
+            background-color: #333;
+            color: #fff;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .main-content {
+            flex: 1;
+            padding: 20px;
+        }
+
+        .featured h2 {
+            margin-bottom: 15px;
+        }
+
+        .restaurant-cards {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .card {
+            flex: 1 1 calc(33.333% - 20px);
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            overflow: hidden;
+            background-color: #fff;
+            text-align: center;
+        }
+
+        .card img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+        }
+
+        .card h3 {
+            padding: 10px;
+            font-size: 18px;
+            color: #333;
+        }
+
+        .card p {
+            padding: 5px;
+            color: #777;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: #fff;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .card {
+                flex: 1 1 calc(50% - 20px);
+            }
+
+            .search-bar input {
+                width: 150px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .card {
+                flex: 1 1 100%;
+            }
+
+            .search-bar input {
+                width: 100px;
+            }
+
+            .header {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="logo">Zomato</div>
+        <div class="search-bar">
+            <input type="text" placeholder="Search for restaurants or cuisines..." id="searchInput">
+            <button onclick="search()">Search</button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <section class="featured">
+            <h2>Featured Restaurants</h2>
+            <div class="restaurant-cards">
+                <!-- Repeat for each restaurant -->
+                <div class="card">
+                    <img src="https://via.placeholder.com/300x150" alt="Restaurant Image">
+                    <h3>Restaurant Name 1</h3>
+                    <p>Cuisine | Location</p>
+                </div>
+                <div class="card">
+                    <img src="https://via.placeholder.com/300x150" alt="Restaurant Image">
+                    <h3>Restaurant Name 2</h3>
+                    <p>Cuisine | Location</p>
+                </div>
+                <div class="card">
+                    <img src="https://via.placeholder.com/300x150" alt="Restaurant Image">
+                    <h3>Restaurant Name 3</h3>
+                    <p>Cuisine | Location</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; 2024 Zomato. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // JavaScript for search functionality
+        function search() {
+            const query = document.getElementById('searchInput').value;
+            alert(`Searching for "${query}"...`);
+        }
+    </script>
+</body>
+</html>
